@@ -15,10 +15,11 @@ const app = express();
 
 //connect DB
 const connectDB = require('./db/connect')
-const authMiddleware = require('./middleware/authentication');
+
 // router
 const authRouter = require('./routes/auth')
 const jobsRouter = require('./routes/jobs')
+const authMiddleware = require('./middleware/authentication');
 
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
@@ -29,10 +30,15 @@ app.use(rateLimit({
   windowsMs: 15*60*1000,  // 15 minutes
   max: 100, // limit each IP to 100 requests per windowsMs
 }))
-app.use(express.json());
+
 app.use(helmet())
-app.use(cors())
+app.use(cors({
+  origin: '*', 
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(xss())
+app.use(express.json());
 
 // extra packages
 app.get('/', (req, res) => {
