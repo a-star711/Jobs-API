@@ -1,25 +1,30 @@
-🚀 Jobs API
+🚀 **Jobs API**  
 A Node.js RESTful API for managing job applications, user authentication, and CRUD operations with MongoDB.
 
-🌐 Live Demo
-Check out the live API deployment: https://jobs-api-3azw.onrender.com/api-docs/
+---
 
+🌐 **Live Demo**  
+Check out the live API deployment: https://jobs-api-3azw.onrender.com/api-docs/
 Access the Swagger documentation for testing and exploring endpoints.
 
-🎯 Features
-User registration and login (JWT-based authentication).
-Secure CRUD operations for job postings.
-Swagger UI integration for easy API testing and documentation.
-Built with MVC architecture for clean and scalable code.
-Security features like CORS, helmet, rate-limiting, and input sanitization.
+---
 
-🛠 Tech Stack
-Back-End: Node.js, Express.js
-Database: MongoDB (Atlas)
-Security: JWT, helmet, CORS, rate-limiting
-Documentation: Swagger UI
+🎯 **Features**  
+- User registration and login (JWT-based authentication).  
+- Secure CRUD operations for job postings.  
+- Swagger UI integration for easy API testing and documentation.  
+- Built with MVC architecture for clean and scalable code.  
+- Security features like CORS, helmet, rate-limiting, and input sanitization.
 
-## 📡 **API Endpoints**
+---
+
+🛠 **Tech Stack**  
+- **Back-End:** Node.js, Express.js  
+- **Database:** MongoDB (Atlas)  
+- **Security:** JWT, helmet, CORS, rate-limiting  
+- **Documentation:** Swagger UI  
+
+---
 
 | **Endpoint**              | **Method** | **Description**               | **Auth Required** |
 |---------------------------|------------|-------------------------------|------------------|
@@ -31,7 +36,7 @@ Documentation: Swagger UI
 | `/api/v1/jobs/:id`        | PATCH      | Update a job posting          | ✅ Yes           |
 | `/api/v1/jobs/:id`        | DELETE     | Delete a job posting          | ✅ Yes           |
 
+---
 
-
-📄 License
+📄 **License**  
 This project is open-source and available under the MIT License.
