@@ -7,6 +7,8 @@ const helmet = require('helmet')
 const cors = require('cors')
 const xss = require('xss-clean');
 const rateLimit = require('express-rate-limit')
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpecs = require('./docs/swagger'); // Reference the swagger.js file
 
 const express = require('express')
 const app = express();
@@ -33,15 +35,21 @@ app.use(cors())
 app.use(xss())
 
 // extra packages
+app.get('/', (req, res) => {
+  res.send('Welcome to the Jobs API! Use /api-docs for API documentation.');
+});
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 // routes
+
 app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/jobs', authMiddleware, jobsRouter)
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
-const port = process.env.PORT || 10000;
+const port = process.env.PORT || 3000;
 
 const start = async () => {
   try {
