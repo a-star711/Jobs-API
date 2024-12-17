@@ -3,6 +3,7 @@ A Node.js RESTful API for managing job applications, user authentication, and CR
 
 🌐 Live Demo
 Check out the live API deployment: https://jobs-api-3azw.onrender.com/api-docs/
+
 Access the Swagger documentation for testing and exploring endpoints.
 
 🎯 Features
