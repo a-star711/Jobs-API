@@ -7,6 +7,8 @@ const helmet = require('helmet')
 const cors = require('cors')
 const xss = require('xss-clean');
 const rateLimit = require('express-rate-limit')
+
+
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpecs = require('./docs/swagger'); // Reference the swagger.js file
 
@@ -27,8 +29,8 @@ const errorHandlerMiddleware = require('./middleware/error-handler');
 
 app.set('trust proxy', 1)
 app.use(rateLimit({
-  windowsMs: 15*60*1000,  // 15 minutes
-  max: 100, // limit each IP to 100 requests per windowsMs
+  windowsMs: 15*60*1000,  
+  max: 100, 
 }))
 
 app.use(helmet())
@@ -40,7 +42,6 @@ app.use(cors({
 app.use(xss())
 app.use(express.json());
 
-// extra packages
 app.get('/', (req, res) => {
   res.send('Welcome to the Jobs API! Use /api-docs for API documentation.');
 });
